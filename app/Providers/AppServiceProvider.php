@@ -19,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        if (!is_dir('/tmp/views')) {
+            @mkdir('/tmp/views', 0755, true);
+        }
     }
 }
